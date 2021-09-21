@@ -13,10 +13,27 @@ config_version=4
 config/name="ClickerMiner"
 config/icon="res://icon.png"
 
+[autoload]
+
+Data="*res://Singletons/Data.gd"
+
 [display]
 
 window/size/width=160
 window/size/height=144
+
+[input]
+
+ui_A={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_B={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":66,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 
