@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Obrero.png-b990cf54366049416396b850604f6b06.stex"
+path="res://.import/Borders.png-4800feb658ca415fcd01941ff6bb5062.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Obrero.png"
-dest_files=[ "res://.import/Obrero.png-b990cf54366049416396b850604f6b06.stex" ]
+source_file="res://Assets/Tiles/Borders.png"
+dest_files=[ "res://.import/Borders.png-4800feb658ca415fcd01941ff6bb5062.stex" ]
 
 [params]
 
