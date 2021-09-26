@@ -1,24 +1,34 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/GUI/Screen.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sprites/Fabrica.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Unidades/Buddy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Unidades/Fabrica.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Unidades/Jackhammer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Upgrades/Upgrades.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mainscene.gd" type="Script" id=8]
 
 [node name="Mainscene" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Map" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64, 80 )
 
-[node name="Fabrica" type="Sprite" parent="."]
+[node name="Unidades" type="Node2D" parent="."]
+
+[node name="Buddy" parent="Unidades" instance=ExtResource( 3 )]
 position = Vector2( 32, 48 )
-texture = ExtResource( 5 )
+frame = 2
 
-[node name="Screen" type="Sprite" parent="."]
-position = Vector2( 80, 72 )
-texture = ExtResource( 1 )
-
-[node name="Rock1" type="Sprite" parent="."]
-position = Vector2( 96, 80 )
-
-[node name="Obrero" type="Sprite" parent="."]
+[node name="Jackhammer" parent="Unidades" instance=ExtResource( 5 )]
 position = Vector2( 64, 48 )
+frame = 3
+
+[node name="Fabrica" parent="Unidades" instance=ExtResource( 4 )]
+position = Vector2( 96, 48 )
+frame = 0
+
+[node name="Menu_buildings" parent="." instance=ExtResource( 7 )]
+position = Vector2( 112, 0 )
