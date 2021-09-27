@@ -31,7 +31,6 @@ animations = [ {
 } ]
 
 [node name="Fabrica" type="AnimatedSprite"]
-position = Vector2( 16, 16 )
 frames = SubResource( 6 )
 animation = "main"
 frame = 1

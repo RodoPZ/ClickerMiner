@@ -97,6 +97,18 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 0, 0, 0 )
 
+[node name="Buddy" parent="Unidades" instance=ExtResource( 3 )]
+position = Vector2( 32, 48 )
+frame = 0
+
+[node name="Jackhammer" parent="Unidades" instance=ExtResource( 5 )]
+position = Vector2( 64, 48 )
+
+[node name="Fabrica" parent="Unidades" instance=ExtResource( 4 )]
+position = Vector2( 96, 48 )
+
+frame = 4
+
 [node name="Score" type="Label" parent="."]
 margin_left = 16.0
 margin_right = 112.0
@@ -124,6 +136,7 @@ position = Vector2( 112, 0 )
 
 [node name="Menu_upgrades" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 128 )
+
 
 [connection signal="focus" from="." to="Menu_buildings" method="_on_Mainscene_focus"]
 [connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]

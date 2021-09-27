@@ -27,6 +27,5 @@ animations = [ {
 } ]
 
 [node name="Jackhammer" type="AnimatedSprite"]
-position = Vector2( 16, 16 )
 frames = SubResource( 5 )
 playing = true
