@@ -7,17 +7,7 @@ signal focus(value)
 func _ready():
 	$Score.text = str(Data.player["Player"]["score"])
 	
-func _process(_delta):
-	$Score.text = str(Data.player["Player"]["score"])
-
-<<<<<<< HEAD
 func _physics_process(delta):
-	menus()
-	
-func menus():
-=======
-func _physics_process(_delta):
->>>>>>> 532eb4f87e83564ee6a4613135e46b7669091ed2
 	if Input.is_action_just_pressed("ui_open_buildings_left") and on_upgrades == false:
 		if on_buildings == false:
 			on_buildings = true

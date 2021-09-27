@@ -5,10 +5,10 @@ var focused = ""
 func _ready():
 	maxim = get_node("VBoxContainer").get_child_count()-1
 
-func _physics_process(_delta):
-	focus_upgrades()
+func _physics_process(delta):
+	focus()
 
-func focus_upgrades():
+func focus():
 	if Input.is_action_just_pressed("ui_open_buildings_left"):
 		focus-=1
 		if focus <0:

@@ -14,11 +14,11 @@ func _physics_process(delta):
 func focus():
 =======
 
-func _physics_process(_delta):
-	focus_buildings()
+func _physics_process(delta):
+	focus()
 
-func focus_buildings():
->>>>>>> 532eb4f87e83564ee6a4613135e46b7669091ed2
+func focus():
+	print(focused)
 	if Input.is_action_just_pressed("ui_open_upgrades_up"):
 		focus-=1
 		if focus <0:
