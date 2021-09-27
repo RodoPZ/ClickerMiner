@@ -6,10 +6,10 @@
 [ext_resource path="res://Assets/Sound/SFX/menu.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sound/SFX/spawn.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Fonts/upheavtt.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Scenes/Upgrades/Upgrades.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Upgrades/Buildings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mainscene.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Player/Rock.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Upgrades/Buildings.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Upgrades/Upgrades.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Camera2D.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
@@ -127,6 +127,7 @@ position = Vector2( 112, 0 )
 [node name="Menu_upgrades" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 128 )
 
+
 [node name="SoundMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -5.0
@@ -140,3 +141,4 @@ volume_db = -10.0
 [connection signal="hit_rock" from="Player" to="Rock" method="_on_Player_hit_rock"]
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]
 [connection signal="unidades" from="Menu_buildings" to="." method="_on_Menu_buildings_unidades"]
+[connection signal="unidades" from="Menu_upgrades" to="." method="_on_Menu_upgrades_unidades"]
