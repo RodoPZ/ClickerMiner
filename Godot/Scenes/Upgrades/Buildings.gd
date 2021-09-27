@@ -6,11 +6,10 @@ func _ready():
 	get_node("VBoxContainer/TextureButton"+str(focus)).grab_focus()
 	maxim = get_node("VBoxContainer").get_child_count()-1
 
-func _physics_process(delta):
-	focus()
+func _physics_process(_delta):
+	focus_buildings()
 
-func focus():
-	print(focused)
+func focus_buildings():
 	if Input.is_action_just_pressed("ui_open_upgrades_up"):
 		focus-=1
 		if focus <0:
