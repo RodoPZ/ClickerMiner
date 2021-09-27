@@ -69,3 +69,6 @@ func _on_Menu_buildings_unidades(value):
 					get_node("Unidades/Tile"+str(space[2])).add_child(Fabrica)
 					space[2] += 1
 					Data.player["Player"]["score"] -= Data.unidades["Fabrica"]["precio"]
+		on_buildings = false
+		get_node("Menu_buildings").set_position(Vector2(112,0))
+		focused("None")
