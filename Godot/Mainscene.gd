@@ -7,20 +7,9 @@ signal focus(value)
 func _ready():
 	$Score.text = str(Data.player["Player"]["score"])
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 func _physics_process(delta):
 	menus()
 	
-func menus():
-=======
-func _physics_process(_delta):
->>>>>>> 532eb4f87e83564ee6a4613135e46b7669091ed2
-=======
-func _physics_process(delta):
->>>>>>> parent of 9b92078 (score buildings)
-=======
 func _physics_process(delta):
 >>>>>>> parent of 9b92078 (score buildings)
 	if Input.is_action_just_pressed("ui_open_buildings_left") and on_upgrades == false:

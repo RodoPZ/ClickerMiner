@@ -17,18 +17,8 @@ func focus():
 func _physics_process(delta):
 	focus()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-func focus_buildings():
->>>>>>> 532eb4f87e83564ee6a4613135e46b7669091ed2
-=======
 func focus():
 	print(focused)
->>>>>>> parent of 9b92078 (score buildings)
-=======
-func focus():
-	print(focused)
->>>>>>> parent of 9b92078 (score buildings)
 	if Input.is_action_just_pressed("ui_open_upgrades_up"):
 		focus-=1
 		if focus <0:
