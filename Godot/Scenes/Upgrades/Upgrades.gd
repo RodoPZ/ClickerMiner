@@ -10,10 +10,12 @@ func _physics_process(_delta):
 
 func focus():
 	if Input.is_action_just_pressed("ui_open_buildings_left"):
+		$SoundMenu2.play()
 		focus-=1
 		if focus <0:
 			focus = maxim
 	elif Input.is_action_just_pressed("ui_close_buildings_right"):
+		$SoundMenu2.play()
 		focus += 1
 		if focus >maxim:
 			focus = 0
