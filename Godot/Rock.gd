@@ -46,5 +46,13 @@ func random_int(min_value,max_value, inclusive_range = false):
 	return (randi() % range_size) + min_value
 
 func damage_rock():
-	if Data.player["Player"]["score"] != score_anterior:
+	if Data.player["Player"]["score"] != score_anterior and Data.player["Player"]["score"] != 0:
+		print(1)
 		rock_hp -= 1
+		var new_particle = load("res://Scenes/Player/Particles2D.tscn").instance()
+		add_child(new_particle)
+		new_particle.position = Vector2(-5,5)
+		var new_particle2 = load("res://Scenes/Player/Particles2D2.tscn").instance()
+		add_child(new_particle2)
+		new_particle2.position = Vector2(-5,5)
+		print(new_particle.emitting)
