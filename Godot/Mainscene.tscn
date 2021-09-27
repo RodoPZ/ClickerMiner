@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -8,67 +8,10 @@
 [ext_resource path="res://Assets/Fonts/upheavtt.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scenes/Upgrades/Upgrades.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mainscene.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Sprites/Spritesheet.png" type="Texture" id=9]
-[ext_resource path="res://Rock.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Player/Rock.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Camera2D.gd" type="Script" id=11]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 9 )
-region = Rect2( 64, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 9 )
-region = Rect2( 64, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 9 )
-region = Rect2( 32, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 9 )
-region = Rect2( 64, 96, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 96, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=13]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=1]
 size = 20
 outline_color = Color( 0.878431, 0.972549, 0.815686, 1 )
 font_data = ExtResource( 6 )
@@ -80,34 +23,27 @@ script = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64, 80 )
-animation = "idle"
 
-[node name="Rock" type="AnimatedSprite" parent="."]
-position = Vector2( 96, 80 )
-frames = SubResource( 13 )
-script = ExtResource( 10 )
+[node name="Rock" parent="." instance=ExtResource( 9 )]
 
 [node name="Unidades" type="Node2D" parent="."]
 
 [node name="Buddy" parent="Unidades" instance=ExtResource( 3 )]
 position = Vector2( 32, 48 )
-frame = 2
+frame = 0
 
 [node name="Jackhammer" parent="Unidades" instance=ExtResource( 5 )]
 position = Vector2( 64, 48 )
-frame = 1
 
 [node name="Fabrica" parent="Unidades" instance=ExtResource( 4 )]
 position = Vector2( 96, 48 )
-
-[node name="Menu_buildings" parent="." instance=ExtResource( 7 )]
-position = Vector2( 112, 0 )
+frame = 3
 
 [node name="Score" type="Label" parent="."]
 margin_left = 16.0
 margin_right = 112.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 text = "964457"
 align = 1
@@ -124,5 +60,8 @@ script = ExtResource( 11 )
 [node name="Timer" type="Timer" parent="Camera2D"]
 
 [node name="Tween" type="Tween" parent="Camera2D"]
+
+[node name="Menu_buildings" parent="." instance=ExtResource( 7 )]
+position = Vector2( 112, 0 )
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]
