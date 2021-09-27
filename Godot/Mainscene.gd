@@ -21,7 +21,7 @@ func menus():
 			get_node("Menu_buildings").set_position(Vector2(0,0))
 			focused("buildings")
 			
-	elif Input.is_action_just_pressed("ui_close_buildings_right"):
+	elif Input.is_action_just_pressed("ui_close_buildings_right") or Input.is_action_just_pressed("ui_B"):
 		if on_buildings:
 			on_buildings = false
 			get_node("Menu_buildings").set_position(Vector2(112,0))
@@ -33,7 +33,7 @@ func menus():
 			get_node("Menu_upgrades").set_position(Vector2(0,48))
 			focused("upgrades")
 			
-	elif Input.is_action_just_pressed("ui_close_upgrades_down"):
+	elif Input.is_action_just_pressed("ui_close_upgrades_down") or Input.is_action_just_pressed("ui_B"):
 		if on_upgrades:
 			on_upgrades = false
 			get_node("Menu_upgrades").set_position(Vector2(0,128))
@@ -51,8 +51,6 @@ func _on_Menu_buildings_unidades(value):
 				
 		if value == "Buddy" and space[0]<=9 and Data.player["Player"]["score"] >= Data.unidades["Buddy"]["precio"]:
 			get_node("Unidades/Tile"+str(space[0])).add_child(Buddy)
-			#get_node("Unidades/Tile"+str(space[0])+"/Buddy").add_child(animated_poof)
-			#$Poof.play("default")
 			space[0] += 1
 			Data.player["Player"]["score"] -= Data.unidades["Buddy"]["precio"]
 			
@@ -71,4 +69,3 @@ func _on_Menu_buildings_unidades(value):
 					get_node("Unidades/Tile"+str(space[2])).add_child(Fabrica)
 					space[2] += 1
 					Data.player["Player"]["score"] -= Data.unidades["Fabrica"]["precio"]
-	#animated_poof.play("default")
