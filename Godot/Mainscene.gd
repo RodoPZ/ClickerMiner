@@ -79,3 +79,7 @@ func _on_Menu_buildings_unidades(value):
 		on_buildings = false
 		get_node("Menu_buildings").set_position(Vector2(112,0))
 		focused("None")
+
+
+func _on_Menu_upgrades_unidades(value):
+	print(value)

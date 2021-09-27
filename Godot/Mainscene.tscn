@@ -135,8 +135,9 @@ volume_db = -5.0
 stream = ExtResource( 5 )
 volume_db = -10.0
 
-[connection signal="focus" from="." to="Menu_buildings" method="_on_Mainscene_focus"]
 [connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]
+[connection signal="focus" from="." to="Menu_buildings" method="_on_Mainscene_focus"]
 [connection signal="hit_rock" from="Player" to="Rock" method="_on_Player_hit_rock"]
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]
 [connection signal="unidades" from="Menu_buildings" to="." method="_on_Menu_buildings_unidades"]
+[connection signal="unidades" from="Menu_upgrades" to="." method="_on_Menu_upgrades_unidades"]

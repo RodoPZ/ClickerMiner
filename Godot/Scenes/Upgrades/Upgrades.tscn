@@ -75,39 +75,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton0" type="TextureButton" parent="VBoxContainer"]
+[node name="Strength" type="TextureButton" parent="VBoxContainer"]
 margin_right = 32.0
 margin_bottom = 72.0
 texture_normal = SubResource( 2 )
 texture_focused = SubResource( 3 )
 
-[node name="TextureButton1" type="TextureButton" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/Strength"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gems" type="TextureButton" parent="VBoxContainer"]
 margin_left = 32.0
 margin_right = 64.0
 margin_bottom = 72.0
 texture_normal = SubResource( 4 )
 texture_focused = SubResource( 5 )
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/Gems"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Soda" type="TextureButton" parent="VBoxContainer"]
 margin_left = 64.0
 margin_right = 96.0
 margin_bottom = 72.0
 texture_normal = SubResource( 6 )
 texture_focused = SubResource( 7 )
 
-[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/Soda"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gears" type="TextureButton" parent="VBoxContainer"]
 margin_left = 96.0
 margin_right = 128.0
 margin_bottom = 72.0
 texture_normal = SubResource( 8 )
 texture_focused = SubResource( 9 )
 
-[node name="TextureButton4" type="TextureButton" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/Gears"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Oil" type="TextureButton" parent="VBoxContainer"]
 margin_left = 128.0
 margin_right = 160.0
 margin_bottom = 72.0
 texture_normal = SubResource( 10 )
 texture_focused = SubResource( 11 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Oil"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite2" type="Sprite" parent="."]
 texture = SubResource( 12 )
