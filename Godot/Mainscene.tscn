@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Map/Map1.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Unidades/Buddy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Unidades/Fabrica.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Unidades/Jackhammer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Fonts/upheavtt.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scenes/Upgrades/Upgrades.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mainscene.gd" type="Script" id=8]
@@ -27,75 +29,15 @@ position = Vector2( 64, 80 )
 
 [node name="Unidades" type="Node2D" parent="."]
 
-[node name="Tile0" type="TileMap" parent="Unidades"]
-position = Vector2( 16, 32 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
+[node name="Buddy" parent="Unidades" instance=ExtResource( 3 )]
+position = Vector2( 32, 48 )
+frame = 0
 
-[node name="Tile1" type="TileMap" parent="Unidades"]
-position = Vector2( 48, 32 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
+[node name="Jackhammer" parent="Unidades" instance=ExtResource( 5 )]
+position = Vector2( 64, 48 )
 
-[node name="Tile2" type="TileMap" parent="Unidades"]
-position = Vector2( 80, 32 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
-
-[node name="Tile3" type="TileMap" parent="Unidades"]
-position = Vector2( 112, 32 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
-
-[node name="Tile4" type="TileMap" parent="Unidades"]
-position = Vector2( 112, 64 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
-
-[node name="Tile5" type="TileMap" parent="Unidades"]
-position = Vector2( 112, 96 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
-
-[node name="Tile6" type="TileMap" parent="Unidades"]
-position = Vector2( 80, 96 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
-
-[node name="Tile7" type="TileMap" parent="Unidades"]
-position = Vector2( 48, 96 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
-
-[node name="Tile8" type="TileMap" parent="Unidades"]
-position = Vector2( 16, 96 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
-
-[node name="Tile9" type="TileMap" parent="Unidades"]
-position = Vector2( 16, 64 )
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( 0, 0, 0 )
+[node name="Fabrica" parent="Unidades" instance=ExtResource( 4 )]
+position = Vector2( 96, 48 )
 
 [node name="Score" type="Label" parent="."]
 margin_left = 16.0
@@ -125,7 +67,6 @@ position = Vector2( 112, 0 )
 [node name="Menu_upgrades" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 128 )
 
-[connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]
 [connection signal="focus" from="." to="Menu_buildings" method="_on_Mainscene_focus"]
+[connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]
-[connection signal="unidades" from="Menu_buildings" to="." method="_on_Menu_buildings_unidades"]

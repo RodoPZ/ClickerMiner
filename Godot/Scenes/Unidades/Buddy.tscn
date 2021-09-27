@@ -28,7 +28,6 @@ animations = [ {
 } ]
 
 [node name="Buddy" type="AnimatedSprite"]
-position = Vector2( 16, 16 )
 frames = SubResource( 5 )
 animation = "main"
 frame = 1
