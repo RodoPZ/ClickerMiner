@@ -1,10 +1,13 @@
 extends Node2D
 var on_upgrades = false
 var on_buildings = false
+var t = 0
 var space = [0,0,0]
 signal focus(value)
 
 func _ready():
+	$Score.text = str(Data.player["Player"]["score"])
+func _process(_delta):
 	$Score.text = str(Data.player["Player"]["score"])
 
 func _physics_process(delta):
@@ -65,6 +68,5 @@ func _on_Menu_buildings_unidades(value):
 					get_node("Unidades/Tile"+str(space[2])).add_child(Fabrica)
 					space[2] += 1
 					Data.player["Player"]["score"]-=10
-		print(space)
 
 		
