@@ -28,8 +28,15 @@ animations = [ {
 } ]
 
 [node name="Buddy" type="AnimatedSprite"]
+position = Vector2( 16, 16 )
 frames = SubResource( 5 )
 animation = "main"
-frame = 1
+frame = 2
 playing = true
 script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
