@@ -24,4 +24,5 @@ lifetime = 2.0
 one_shot = true
 speed_scale = 1.5
 explosiveness = 0.9
+fixed_fps = 24
 process_material = SubResource( 3 )
