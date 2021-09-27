@@ -3,7 +3,7 @@ extends Node
 var player = {
 	"Player": {
 	"score": 0,
-	"mpc": 1, #mpc: Mine per click
+	"mpc": 1, #mpc: Mines per click
 	"game_over": false,
 	"paused": false
 	}

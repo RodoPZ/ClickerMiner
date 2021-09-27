@@ -2,7 +2,7 @@ extends AnimatedSprite
 
 onready var animated_sprite : AnimatedSprite = get_node(".")
 onready var score_anterior
-onready var rock_hp = 11
+onready var rock_hp = 10
 onready var flag = 0
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,7 +12,6 @@ onready var flag = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	pass # Replace with function body.
 
 func _process(_delta):
 	if rock_hp == 0 and Data.player["Player"]["score"] != score_anterior:	
