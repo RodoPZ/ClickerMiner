@@ -7,10 +7,18 @@ signal unidades(value)
 
 func _ready():
 	maxim = get_node("VBoxContainer").get_child_count()-1
+<<<<<<< HEAD
 func _physics_process(delta):
 	focus()
 
 func focus():
+=======
+
+func _physics_process(_delta):
+	focus_buildings()
+
+func focus_buildings():
+>>>>>>> 532eb4f87e83564ee6a4613135e46b7669091ed2
 	if Input.is_action_just_pressed("ui_open_upgrades_up"):
 		focus-=1
 		if focus <0:
