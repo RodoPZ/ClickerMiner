@@ -21,11 +21,11 @@ region = Rect2( 128, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 160, 32, 32 )
+region = Rect2( 128, 192, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 192, 32, 32 )
+region = Rect2( 160, 160, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
@@ -96,6 +96,7 @@ texture_normal = SubResource( 6 )
 texture_focused = SubResource( 7 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Fabrica"]
+visible = false
 margin_left = 40.0
 margin_top = -72.0
 margin_right = 110.0
