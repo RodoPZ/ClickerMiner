@@ -4,13 +4,14 @@ var on_buildings = false
 var t = 0
 var space = [0,0,0]
 signal focus(value)
+#onready var animated_poof : AnimatedSprite = preload("res://Scenes/Player/Poof.tscn").instance()
 
 func _ready():
 	$Score.text = str(Data.player["Player"]["score"])
 func _process(_delta):
 	$Score.text = str(Data.player["Player"]["score"])
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	menus()
 	
 func menus():
@@ -47,26 +48,27 @@ func _on_Menu_buildings_unidades(value):
 		var Buddy = preload("res://Scenes/Unidades/Buddy.tscn").instance()
 		var Jackhammer = preload("res://Scenes/Unidades/Jackhammer.tscn").instance()
 		var Fabrica = preload("res://Scenes/Unidades/Fabrica.tscn").instance()
-		
-		if value == "Buddy" and space[0]<=9 and Data.player["Player"]["score"] > 10:
+				
+		if value == "Buddy" and space[0]<=9 and Data.player["Player"]["score"] >= Data.unidades["Buddy"]["precio"]:
 			get_node("Unidades/Tile"+str(space[0])).add_child(Buddy)
+			#get_node("Unidades/Tile"+str(space[0])+"/Buddy").add_child(animated_poof)
+			#$Poof.play("default")
 			space[0] += 1
-			Data.player["Player"]["score"]-=10
+			Data.player["Player"]["score"] -= Data.unidades["Buddy"]["precio"]
 			
-		if value == "Jackhammer" and space[1] <= 9 and Data.player["Player"]["score"] > 10:
+		if value == "Jackhammer" and space[1] <= 9 and Data.player["Player"]["score"] >= Data.unidades["Jackhammer"]["precio"]:
 			if get_node("Unidades/Tile"+str(space[1])).get_child_count() == 1:
 				if get_node("Unidades/Tile"+str(space[1])).get_child(0).get_name() == "Buddy":
 					get_node("Unidades/Tile"+str(space[1])).get_child(0).queue_free()
 					get_node("Unidades/Tile"+str(space[1])).add_child(Jackhammer)
 					space[1] += 1
-					Data.player["Player"]["score"]-=10
+					Data.player["Player"]["score"] -= Data.unidades["Jackhammer"]["precio"]
 					
-		if value == "Fabrica" and space[2] <=9 and  Data.player["Player"]["score"] > 10:
+		if value == "Fabrica" and space[2] <=9 and  Data.player["Player"]["score"] >= Data.unidades["Fabrica"]["precio"]:
 			if get_node("Unidades/Tile"+str(space[2])).get_child_count() == 1:
 				if get_node("Unidades/Tile"+str(space[2])).get_child(0).get_name() == "Jackhammer":
 					get_node("Unidades/Tile"+str(space[2])).get_child(0).queue_free()
 					get_node("Unidades/Tile"+str(space[2])).add_child(Fabrica)
 					space[2] += 1
-					Data.player["Player"]["score"]-=10
-
-		
+					Data.player["Player"]["score"] -= Data.unidades["Fabrica"]["precio"]
+	#animated_poof.play("default")

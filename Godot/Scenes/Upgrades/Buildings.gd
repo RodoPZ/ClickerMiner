@@ -7,7 +7,8 @@ signal unidades(value)
 
 func _ready():
 	maxim = get_node("VBoxContainer").get_child_count()-1
-func _physics_process(delta):
+	
+func _physics_process(_delta):
 	focus()
 
 func focus():
