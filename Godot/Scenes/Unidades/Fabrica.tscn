@@ -33,5 +33,5 @@ animations = [ {
 [node name="Fabrica" type="AnimatedSprite"]
 frames = SubResource( 6 )
 animation = "main"
-frame = 2
+frame = 1
 playing = true
