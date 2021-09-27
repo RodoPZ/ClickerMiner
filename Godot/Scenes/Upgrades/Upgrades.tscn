@@ -19,11 +19,11 @@ region = Rect2( 160, 128, 32, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 128, 160, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
 region = Rect2( 160, 160, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 128, 192, 32, 32 )
 
@@ -53,16 +53,58 @@ margin_bottom = 32.0
 texture_normal = SubResource( 2 )
 texture_focused = SubResource( 3 )
 
+[node name="Label" type="Label" parent="VBoxContainer/Buddy"]
+visible = false
+margin_left = 40.0
+margin_right = 108.0
+margin_bottom = 120.0
+text = "COmes pito
+jaja 
+salu2"
+align = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Jackhammer" type="TextureButton" parent="VBoxContainer"]
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
 texture_normal = SubResource( 4 )
-texture_focused = SubResource( 6 )
+texture_focused = SubResource( 5 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Jackhammer"]
+visible = false
+margin_left = 40.0
+margin_top = -36.0
+margin_right = 109.0
+margin_bottom = 84.0
+text = "Puto el que 
+lo lea jaja"
+align = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Fabrica" type="TextureButton" parent="VBoxContainer"]
 margin_top = 72.0
 margin_right = 32.0
 margin_bottom = 104.0
-texture_normal = SubResource( 5 )
+texture_normal = SubResource( 6 )
 texture_focused = SubResource( 7 )
+
+[node name="Label" type="Label" parent="VBoxContainer/Fabrica"]
+margin_left = 40.0
+margin_top = -72.0
+margin_right = 110.0
+margin_bottom = 48.0
+text = "Lo abalasia
+ron los 
+munisipales"
+align = 3
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
