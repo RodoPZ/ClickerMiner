@@ -4,10 +4,10 @@
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Map/Map1.tres" type="TileSet" id=3]
 [ext_resource path="res://Assets/Fonts/upheavtt.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Scenes/Upgrades/Upgrades.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Menus/Upgrades.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mainscene.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Player/Rock.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Upgrades/Buildings.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Menus/Buildings.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Camera2D.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
