@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Sprites/Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Upgrades/Buildings.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Tiles/Borders.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -12,17 +11,25 @@ region = Rect2( 0, 384, 160, 160 )
 atlas = ExtResource( 1 )
 region = Rect2( 128, 128, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 112, 352, 32, 32 )
-
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 160, 32, 32 )
+region = Rect2( 160, 128, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
+region = Rect2( 128, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 160, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
 region = Rect2( 128, 192, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 192, 32, 32 )
 
 [node name="Buildings" type="Node2D"]
 script = ExtResource( 2 )
@@ -40,22 +47,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton0" type="TextureButton" parent="VBoxContainer"]
+[node name="Buddy" type="TextureButton" parent="VBoxContainer"]
 margin_right = 32.0
 margin_bottom = 32.0
 texture_normal = SubResource( 2 )
-texture_focused = SubResource( 5 )
+texture_focused = SubResource( 3 )
 
-[node name="TextureButton1" type="TextureButton" parent="VBoxContainer"]
+[node name="Jackhammer" type="TextureButton" parent="VBoxContainer"]
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
-texture_normal = SubResource( 3 )
-texture_focused = ExtResource( 3 )
+texture_normal = SubResource( 4 )
+texture_focused = SubResource( 6 )
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+[node name="Fabrica" type="TextureButton" parent="VBoxContainer"]
 margin_top = 72.0
 margin_right = 32.0
 margin_bottom = 104.0
-texture_normal = SubResource( 4 )
-texture_focused = ExtResource( 3 )
+texture_normal = SubResource( 5 )
+texture_focused = SubResource( 7 )
