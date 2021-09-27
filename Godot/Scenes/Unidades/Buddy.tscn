@@ -32,7 +32,7 @@ animations = [ {
 position = Vector2( 16, 16 )
 frames = SubResource( 5 )
 animation = "main"
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 1 )
 
