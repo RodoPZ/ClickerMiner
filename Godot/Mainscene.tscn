@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Map/Map1.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Sound/SFX/menu.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sound/SFX/spawn.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Fonts/upheavtt.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scenes/Upgrades/Buildings.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mainscene.gd" type="Script" id=8]
@@ -124,6 +126,15 @@ position = Vector2( 112, 0 )
 
 [node name="Menu_upgrades" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 128 )
+
+
+[node name="SoundMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+
+[node name="SoundSpawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
 
 [connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]
 [connection signal="focus" from="." to="Menu_buildings" method="_on_Mainscene_focus"]
