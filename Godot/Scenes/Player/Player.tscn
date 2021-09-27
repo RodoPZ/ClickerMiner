@@ -71,6 +71,6 @@ __meta__ = {
 
 [node name="Soundmine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -15.0
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
