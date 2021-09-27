@@ -20,28 +20,28 @@ func menus():
 			on_buildings = true
 			get_node("Menu_buildings").set_position(Vector2(0,0))
 			focused("buildings")
-			#$SoundMenu.play()
+			$SoundMenu2.play()
 			
 	elif Input.is_action_just_pressed("ui_close_buildings_right") or Input.is_action_just_pressed("ui_B"):
 		if on_buildings:
 			on_buildings = false
 			get_node("Menu_buildings").set_position(Vector2(112,0))
 			focused("None")
-			#$SoundMenu.play()
+			$SoundMenu2.play()
 			
 	elif Input.is_action_just_pressed("ui_open_upgrades_up") and on_buildings == false:
 		if on_upgrades == false:
 			on_upgrades = true
 			get_node("Menu_upgrades").set_position(Vector2(0,48))
 			focused("upgrades")
-			#$SoundMenu.play()
+			$SoundMenu.play()
 			
 	elif Input.is_action_just_pressed("ui_close_upgrades_down") or Input.is_action_just_pressed("ui_B"):
 		if on_upgrades:
 			on_upgrades = false
 			get_node("Menu_upgrades").set_position(Vector2(0,128))
 			focused("None")
-			#$SoundMenu.play()
+			$SoundMenu.play()
 
 
 func focused(value):
