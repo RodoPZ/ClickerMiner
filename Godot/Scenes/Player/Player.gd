@@ -1,6 +1,7 @@
 extends AnimatedSprite
 
 onready var animated_sprite : AnimatedSprite = get_node(".")
+#onready var sound_mine: AudioStreamPlayer = get_node("SoundMine")
 var Pressed_A = 0
 signal hit_rock()
 
@@ -15,6 +16,7 @@ func _physics_process(_delta):
 	#usar pico
 	if Input.is_action_just_pressed("ui_B") and Pressed_A != 0:
 		Pressed_A = 0
+		$Soundmine.play()
 		Data.player["Player"]["score"] += Data.player["Player"]["mpc"]
 		animated_sprite.play("picar2")
 		get_node("Timer").start(1)

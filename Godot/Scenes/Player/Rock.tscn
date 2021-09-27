@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Rock.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sound/SFX/break.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -63,3 +64,7 @@ animations = [ {
 position = Vector2( 96, 80 )
 frames = SubResource( 13 )
 script = ExtResource( 1 )
+
+[node name="SoundBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0

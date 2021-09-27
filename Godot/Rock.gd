@@ -16,6 +16,7 @@ func _ready():
 func _process(_delta):
 	if rock_hp == 0 and Data.player["Player"]["score"] != score_anterior:	
 		Globals.camera.shake(200,.4,200)
+		$SoundBreak.play()
 		pick_rock()
 	score_anterior = Data.player["Player"]["score"];
 
