@@ -30,5 +30,6 @@ animations = [ {
 [node name="Buddy" type="AnimatedSprite"]
 frames = SubResource( 5 )
 animation = "main"
+frame = 1
 playing = true
 script = ExtResource( 1 )

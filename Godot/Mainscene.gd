@@ -5,7 +5,7 @@ var t = 0
 
 
 func _ready():
-	pass # Replace with function body.
+	$Score.text = str(Data.player["Player"]["score"])
 
 func _physics_process(delta):
 	t += delta * 0.4
@@ -19,3 +19,6 @@ func _physics_process(delta):
 			get_node("Menu_buildings").set_position(Vector2(112,0))
 	
 	
+
+
+
