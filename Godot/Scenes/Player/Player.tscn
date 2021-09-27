@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/player.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/pixel-4x4.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -14,11 +15,11 @@ region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -29,14 +30,20 @@ animations = [ {
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "picar2",
+"name": "picar1",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "picar1",
+"name": "picar2",
 "speed": 5.0
 } ]
+
+[sub_resource type="DynamicFont" id=6]
+size = 8
+outline_size = 1
+outline_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+font_data = ExtResource( 4 )
 
 [node name="Player" type="AnimatedSprite"]
 position = Vector2( 16, 16 )
@@ -47,5 +54,18 @@ script = ExtResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -15.7144
+margin_top = -24.4135
+margin_right = 24.2856
+margin_bottom = -10.4135
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
