@@ -19,7 +19,6 @@ func focus():
 			focus = 0
 	if focused == "upgrades":
 		get_node("VBoxContainer/TextureButton"+str(focus)).grab_focus()
-	else:
 		
 	if focus == maxim:
 		get_node("VBoxContainer").set_position(Vector2(-4,16))
