@@ -44,6 +44,7 @@ func focused(value):
 	emit_signal("focus",value)
 
 func _on_Menu_buildings_unidades(value):
+	print(value)
 	if on_buildings:
 		var Buddy = preload("res://Scenes/Unidades/Buddy.tscn").instance()
 		var Jackhammer = preload("res://Scenes/Unidades/Jackhammer.tscn").instance()
@@ -69,3 +70,10 @@ func _on_Menu_buildings_unidades(value):
 					get_node("Unidades/Tile"+str(space[2])).add_child(Fabrica)
 					space[2] += 1
 					Data.player["Player"]["score"] -= Data.unidades["Fabrica"]["precio"]
+		on_buildings = false
+		get_node("Menu_buildings").set_position(Vector2(112,0))
+		focused("None")
+
+
+func _on_Menu_upgrades_unidades(value):
+	print(value)
