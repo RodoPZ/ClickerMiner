@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cant.wav-8abec4d496b25f782259de70e00f13d0.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/cant.wav"
+dest_files=[ "res://.import/cant.wav-8abec4d496b25f782259de70e00f13d0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
