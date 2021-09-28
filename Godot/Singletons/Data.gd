@@ -2,7 +2,7 @@ extends Node
 
 var player = {
 	"Player": {
-	"score": 0,
+	"score": 100000000000,
 	"mpc": 1, #mpc: Mines per click
 	"bonus_piedra": 1,
 	"game_over": false,
