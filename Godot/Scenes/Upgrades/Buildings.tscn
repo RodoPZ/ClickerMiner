@@ -125,10 +125,10 @@ texture_focused = SubResource( 8 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Jackhammer"]
 visible = false
-margin_left = 36.236
-margin_top = -5.89922
-margin_right = 108.236
-margin_bottom = 2.10078
+margin_left = 35.9554
+margin_top = -12.3534
+margin_right = 107.955
+margin_bottom = -4.35337
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 text = "Hammer"
@@ -145,17 +145,18 @@ margin_right = 72.7024
 margin_bottom = 29.8632
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
-text = "A brand new jackhammer for your buddy!"
+text = "A brand new jackhammer for your buddy!
+(need full buddys)"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stats" type="Label" parent="VBoxContainer/Jackhammer/Label"]
-margin_left = -0.198425
-margin_top = 33.8929
-margin_right = 72.8016
-margin_bottom = 51.8929
+margin_left = 0.924042
+margin_top = 47.3624
+margin_right = 73.9241
+margin_bottom = 65.3624
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "cost - 100 
@@ -176,9 +177,9 @@ texture_focused = SubResource( 10 )
 [node name="Label" type="Label" parent="VBoxContainer/Fabrica"]
 visible = false
 margin_left = 36.0
-margin_top = -0.210224
+margin_top = -13.9604
 margin_right = 108.0
-margin_bottom = 7.78978
+margin_bottom = -5.96037
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
 text = "Factory"
@@ -189,22 +190,23 @@ __meta__ = {
 }
 
 [node name="Desc" type="Label" parent="VBoxContainer/Fabrica/Label"]
-margin_top = 12.0
+margin_top = 11.7194
 margin_right = 75.0
-margin_bottom = 23.0
+margin_bottom = 36.7194
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
-text = "Jackhammer hard. Factory easy."
+text = "Jackhammer hard. Factory easy.
+(Need full hammers)"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stats" type="Label" parent="VBoxContainer/Fabrica/Label"]
-margin_left = 0.455009
-margin_top = 26.1102
-margin_right = 73.455
-margin_bottom = 39.1102
+margin_left = -0.10624
+margin_top = 40.7022
+margin_right = 72.8938
+margin_bottom = 53.7022
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "cost - 1000

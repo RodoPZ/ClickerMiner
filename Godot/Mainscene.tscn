@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Camera2D.gd" type="Script" id=11]
 [ext_resource path="res://Assets/Sound/SFX/menu2.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Sound/Song.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Assets/Sound/SFX/cant.wav" type="AudioStream" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -146,9 +147,13 @@ stream = ExtResource( 13 )
 volume_db = -10.0
 autoplay = true
 
-[connection signal="focus" from="." to="Player" method="_on_Mainscene_focus"]
-[connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]
+[node name="SoundCant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -10.0
+
 [connection signal="focus" from="." to="Menu_buildings" method="_on_Mainscene_focus"]
+[connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]
+[connection signal="focus" from="." to="Player" method="_on_Mainscene_focus"]
 [connection signal="hit_rock" from="Player" to="Rock" method="_on_Player_hit_rock"]
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]
 [connection signal="unidades" from="Menu_buildings" to="." method="_on_Menu_buildings_unidades"]
