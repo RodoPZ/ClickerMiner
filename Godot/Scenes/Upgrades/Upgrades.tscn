@@ -1,8 +1,14 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Sprites/Spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Upgrades/Upgrades.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Sound/SFX/menu2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Fonts/pixel-4x4.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/Upgrades/Stats_upgrades.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Upgrades/Stats_gems.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Upgrades/Stats_soda.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Upgrades/Stats_gears.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Upgrades/Stats_oil.gd" type="Script" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -16,43 +22,55 @@ region = Rect2( 0, 288, 32, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 96, 256, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 288, 32, 32 )
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 4
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 4
+font_data = ExtResource( 4 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 256, 32, 32 )
+region = Rect2( 32, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 288, 32, 32 )
+region = Rect2( 128, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 256, 32, 32 )
+region = Rect2( 64, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 288, 32, 32 )
+region = Rect2( 160, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 192, 256, 32, 32 )
+region = Rect2( 96, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 288, 32, 32 )
+region = Rect2( 192, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 224, 256, 32, 32 )
+region = Rect2( 128, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 544, 4, 100 )
+region = Rect2( 224, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 544, 4, 100 )
+
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
 region = Rect2( 156, 544, 4, 100 )
 
@@ -82,8 +100,40 @@ texture_normal = SubResource( 2 )
 texture_focused = SubResource( 3 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Strength"]
-margin_right = 40.0
-margin_bottom = 14.0
+visible = false
+margin_left = 12.0
+margin_top = 36.0
+margin_right = 93.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "Strenght"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="VBoxContainer/Strength/Label"]
+margin_top = 13.0
+margin_right = 133.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+text = "Get more points per mine!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Label" parent="VBoxContainer/Strength/Label"]
+margin_top = 21.0
+margin_right = 140.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
+text = "sad"
+autowrap = true
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,12 +142,44 @@ __meta__ = {
 margin_left = 32.0
 margin_right = 64.0
 margin_bottom = 72.0
-texture_normal = SubResource( 4 )
-texture_focused = SubResource( 5 )
+texture_normal = SubResource( 5 )
+texture_focused = SubResource( 6 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Gems"]
-margin_right = 40.0
-margin_bottom = 14.0
+visible = false
+margin_left = -20.0
+margin_top = 36.0
+margin_right = 61.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "Gems"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="VBoxContainer/Gems/Label"]
+margin_top = 13.0
+margin_right = 145.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+text = "Bonus after breaking rock!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Label" parent="VBoxContainer/Gems/Label"]
+margin_top = 21.0
+margin_right = 140.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
+text = "sad"
+autowrap = true
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,12 +188,47 @@ __meta__ = {
 margin_left = 64.0
 margin_right = 96.0
 margin_bottom = 72.0
-texture_normal = SubResource( 6 )
-texture_focused = SubResource( 7 )
+texture_normal = SubResource( 7 )
+texture_focused = SubResource( 8 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Soda"]
-margin_right = 40.0
-margin_bottom = 14.0
+visible = false
+margin_left = -52.0
+margin_top = 36.0
+margin_right = 29.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "Soda"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="VBoxContainer/Soda/Label"]
+margin_top = 13.0
+margin_right = 142.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+text = "Invite your buddy a fresh cola!
+
+
+(Needs buddies!)"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Label" parent="VBoxContainer/Soda/Label"]
+margin_top = 21.0
+margin_right = 140.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
+text = "sad"
+autowrap = true
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -120,12 +237,47 @@ __meta__ = {
 margin_left = 96.0
 margin_right = 128.0
 margin_bottom = 72.0
-texture_normal = SubResource( 8 )
-texture_focused = SubResource( 9 )
+texture_normal = SubResource( 9 )
+texture_focused = SubResource( 10 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Gears"]
-margin_right = 40.0
-margin_bottom = 14.0
+visible = false
+margin_left = -84.0
+margin_top = 36.0
+margin_right = -3.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "Gears"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="VBoxContainer/Gears/Label"]
+margin_top = 13.0
+margin_right = 133.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+text = "Stronger Jackhammer!
+
+
+(Needs Hammers!)"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Label" parent="VBoxContainer/Gears/Label"]
+margin_top = 21.0
+margin_right = 140.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
+text = "sad"
+autowrap = true
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,23 +286,58 @@ __meta__ = {
 margin_left = 128.0
 margin_right = 160.0
 margin_bottom = 72.0
-texture_normal = SubResource( 10 )
-texture_focused = SubResource( 11 )
+texture_normal = SubResource( 11 )
+texture_focused = SubResource( 12 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Oil"]
-margin_right = 40.0
-margin_bottom = 14.0
+visible = false
+margin_left = -116.0
+margin_top = 36.0
+margin_right = -35.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0313726, 0.0941176, 0.12549, 1 )
+text = "Oil"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Desc" type="Label" parent="VBoxContainer/Oil/Label"]
+margin_top = 13.0
+margin_right = 142.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 15 )
+custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
+text = "Even factories need some love!
+
+
+(Needs Factories!)"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="Label" parent="VBoxContainer/Oil/Label"]
+margin_top = 21.0
+margin_right = 140.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
+text = "sad"
+autowrap = true
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite2" type="Sprite" parent="."]
-texture = SubResource( 12 )
+texture = SubResource( 13 )
 centered = false
 
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( 156, 0 )
-texture = SubResource( 13 )
+texture = SubResource( 14 )
 centered = false
 
 [node name="SoundMenu2" type="AudioStreamPlayer" parent="."]

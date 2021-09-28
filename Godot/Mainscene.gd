@@ -47,31 +47,35 @@ func _on_Menu_buildings_unidades(value):
 		var Buddy = preload("res://Scenes/Unidades/Buddy.tscn").instance()
 		var Jackhammer = preload("res://Scenes/Unidades/Jackhammer.tscn").instance()
 		var Fabrica = preload("res://Scenes/Unidades/Fabrica.tscn").instance()
-		print(space,can_upgrade)
+		#print(space,can_upgrade)
 		
 		if value == "Buddy" and space[0]<=9 and Data.player["Player"]["score"] >= Data.unidades[value]["precio"]:
 			spawn_building(value,Buddy,0,2)
 			can_upgrade[0] = true
+
 		elif value == "Jackhammer" and space[0] == 10 and space[1] <= 9 and Data.player["Player"]["score"] >= Data.unidades[value]["precio"]:
 			if get_node("Unidades/Tile"+str(space[1])).get_child_count() == 1:
 				if get_node("Unidades/Tile"+str(space[1])).get_child(0).get_name() == "Buddy":
 					get_node("Unidades/Tile"+str(space[1])).get_child(0).queue_free()
 					spawn_building(value,Jackhammer,1,2)
 					can_upgrade[1] = true
+
 		elif value == "Fabrica" and  space[1] == 10 and space[2] <=9 and  Data.player["Player"]["score"] >= Data.unidades[value]["precio"]:
 			if get_node("Unidades/Tile"+str(space[2])).get_child_count() == 1:
 				if get_node("Unidades/Tile"+str(space[2])).get_child(0).get_name() == "Jackhammer":
 					get_node("Unidades/Tile"+str(space[2])).get_child(0).queue_free()
 					spawn_building(value,Fabrica,2,2)
 					can_upgrade[2] = true
-		else: 
-			print("Puto el que lo lea siono")
-			if space[1] > 8:
-				can_upgrade[0] = false
-			if space[2] > 8:
-				can_upgrade[1] = false
+		else:
+			$SoundCant.play()
+			
+		if space[1] > 8:
+			can_upgrade[0] = false
+		if space[2] > 8:
+			can_upgrade[1] = false
+
 func _on_Menu_upgrades_unidades(value):
-	print(can_upgrade)
+	#print(can_upgrade)
 	if on_upgrades:
 		if value == "Strength" and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
 			player_upgrades(value,"mpc",11)
@@ -88,7 +92,8 @@ func _on_Menu_upgrades_unidades(value):
 		elif value == "Oil" and can_upgrade[2] and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
 			building_upgrades(value,"Fabrica",5)
 		else:
-			print("cant upgrade")
+			print(2)
+			$SoundCant.play()
 
 
 func spawn_building(value,names,index,aumento_precio):
@@ -107,7 +112,7 @@ func building_upgrades(value,building,aumento_precio):
 		#
 		Data.unidades[building]["mps"] = ceil(Data.unidades[building]["mps"]*Data.upgrades[value]["efecto"])
 		Data.upgrades[value]["precio"] = Data.upgrades[value]["precio"]*aumento_precio
-		print(Data.unidades[building]["mps"])
+		#print(Data.unidades[building]["mps"])
 		#
 		on_upgrades = false
 		get_node("Menu_upgrades").set_position(Vector2(0,128))
