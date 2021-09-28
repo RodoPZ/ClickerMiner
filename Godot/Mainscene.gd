@@ -52,27 +52,25 @@ func _on_Menu_buildings_unidades(value):
 		if value == "Buddy" and space[0]<=9 and Data.player["Player"]["score"] >= Data.unidades[value]["precio"]:
 			spawn_building(value,Buddy,0,2)
 			can_upgrade[0] = true
-			
+
 		elif value == "Jackhammer" and space[0] == 10 and space[1] <= 9 and Data.player["Player"]["score"] >= Data.unidades[value]["precio"]:
 			if get_node("Unidades/Tile"+str(space[1])).get_child_count() == 1:
 				if get_node("Unidades/Tile"+str(space[1])).get_child(0).get_name() == "Buddy":
 					get_node("Unidades/Tile"+str(space[1])).get_child(0).queue_free()
 					spawn_building(value,Jackhammer,1,2)
 					can_upgrade[1] = true
-			
+
 		elif value == "Fabrica" and  space[1] == 10 and space[2] <=9 and  Data.player["Player"]["score"] >= Data.unidades[value]["precio"]:
 			if get_node("Unidades/Tile"+str(space[2])).get_child_count() == 1:
 				if get_node("Unidades/Tile"+str(space[2])).get_child(0).get_name() == "Jackhammer":
 					get_node("Unidades/Tile"+str(space[2])).get_child(0).queue_free()
 					spawn_building(value,Fabrica,2,2)
 					can_upgrade[2] = true
-		
 		else:
 			$SoundCant.play()
 			
 		if space[1] > 8:
 			can_upgrade[0] = false
-
 		if space[2] > 8:
 			can_upgrade[1] = false
 
@@ -80,10 +78,10 @@ func _on_Menu_upgrades_unidades(value):
 	#print(can_upgrade)
 	if on_upgrades:
 		if value == "Strength" and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
-			player_upgrades(value,"mpc",5)
+			player_upgrades(value,"mpc",11)
 			
 		elif value == "Gems" and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
-			player_upgrades(value,"bonus_piedra",5)
+			player_upgrades(value,"bonus_piedra",11)
 
 		elif value == "Soda" and can_upgrade[0] and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
 			building_upgrades(value,"Buddy",5)
