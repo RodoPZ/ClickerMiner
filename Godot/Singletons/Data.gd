@@ -2,7 +2,7 @@ extends Node
 
 var player = {
 	"Player": {
-	"score": 100000000000,
+	"score": 1000000,
 	"mpc": 1, #mpc: Mines per click
 	"bonus_piedra": 1,
 	"game_over": false,
@@ -17,7 +17,7 @@ var unidades = {
 	},
 	
 	"Jackhammer": {
-		"precio": 20,
+		"precio": 2000,
 		"mps": 10
 	},
 	
@@ -29,12 +29,12 @@ var unidades = {
 var upgrades = {
 	"Strength": {
 		"precio": 1,
-		"efecto": 1.5,
+		"efecto": 4,
 	},
 	
 	"Gems": {
 		"precio": 1,
-		"efecto": 1.5,
+		"efecto": 5,
 	},
 	
 	"Soda": {
@@ -44,11 +44,11 @@ var upgrades = {
 	
 	"Gears": {
 		"precio": 1,
-		"efecto": 1.5,
+		"efecto": 2,
 	},
 	
 	"Oil": {
 		"precio": 1,
-		"efecto": 1.5,
+		"efecto": 2.5,
 	}	
 }
