@@ -147,6 +147,7 @@ volume_db = -10.0
 autoplay = true
 
 [connection signal="focus" from="." to="Menu_buildings" method="_on_Mainscene_focus"]
+[connection signal="focus" from="." to="Player" method="_on_Mainscene_focus"]
 [connection signal="focus" from="." to="Menu_upgrades" method="_on_Mainscene_focus"]
 [connection signal="hit_rock" from="Player" to="Rock" method="_on_Player_hit_rock"]
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_Timer_timeout"]

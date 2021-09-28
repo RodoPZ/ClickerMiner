@@ -4,6 +4,7 @@ var player = {
 	"Player": {
 	"score": 0,
 	"mpc": 1, #mpc: Mines per click
+	"bonus_piedra": 1,
 	"game_over": false,
 	"paused": false
 	}
@@ -24,4 +25,30 @@ var unidades = {
 		"precio": 30,
 		"mps": 100
 	}
+}
+var upgrades = {
+	"Strength": {
+		"precio": 1,
+		"efecto": 1.5,
+	},
+	
+	"Gems": {
+		"precio": 1,
+		"efecto": 1.5,
+	},
+	
+	"Soda": {
+		"precio": 1,
+		"efecto": 1.5,
+	},
+	
+	"Gears": {
+		"precio": 1,
+		"efecto": 1.5,
+	},
+	
+	"Oil": {
+		"precio": 1,
+		"efecto": 1.5,
+	}	
 }

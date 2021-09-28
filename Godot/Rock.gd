@@ -58,7 +58,9 @@ func _on_Player_hit_rock():
 		else:
 			self.position = Vector2(96,80)
 		flag += 1
+    
 	if rock_hp == 0 and Data.player["Player"]["score"] != score_anterior:	
+		Data.player["Player"]["score"] += Data.player["Player"]["bonus_piedra"] 
 		Globals.camera.shake(200,.4,200)
 		$SoundBreak.play()
 		pick_rock()

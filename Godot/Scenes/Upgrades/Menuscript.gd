@@ -3,21 +3,18 @@ var focus = 0
 var maxim = 0
 var focused = "None"
 signal unidades(value)
-var unidades = []
+var unidades_array = []
 
 
 func _ready():
 	maxim = get_node("VBoxContainer").get_child_count()-1
 	for i in range(get_node("VBoxContainer").get_child_count()):
-		unidades.append(get_node("VBoxContainer").get_child(i).get_name())
-	if self.get_name() == "Menu_buildings":
-		var input_metod = []
-
-
+		unidades_array.append(get_node("VBoxContainer").get_child(i).get_name())
+		
 func _physics_process(_delta):
-	focus()
+	gain_focus()
 
-func focus():
+func gain_focus():
 	pass
 
 func unidades(value):
