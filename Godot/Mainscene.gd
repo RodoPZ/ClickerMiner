@@ -78,10 +78,10 @@ func _on_Menu_upgrades_unidades(value):
 	#print(can_upgrade)
 	if on_upgrades:
 		if value == "Strength" and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
-			player_upgrades(value,"mpc",11)
+			player_upgrades(value,"mpc",5)
 			
 		elif value == "Gems" and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
-			player_upgrades(value,"bonus_piedra",11)
+			player_upgrades(value,"bonus_piedra",5)
 
 		elif value == "Soda" and can_upgrade[0] and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
 			building_upgrades(value,"Buddy",5)
@@ -90,7 +90,7 @@ func _on_Menu_upgrades_unidades(value):
 			building_upgrades(value,"Jackhammer",5)
 
 		elif value == "Oil" and can_upgrade[2] and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
-			building_upgrades(value,"Fabrica",5)
+			building_upgrades(value,"Fabrica",6)
 		else:
 			print(2)
 			$SoundCant.play()
