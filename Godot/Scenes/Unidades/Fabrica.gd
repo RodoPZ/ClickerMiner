@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 func _on_Timer_timeout():
-	Data.player["Player"]["score"] += Data.unidades["Fabrica"]["mps"]/10
+	Data.player["Player"]["score"] += round(Data.unidades["Fabrica"]["mps"]/10)
 
 func _on_Poof_animation_finished():
 	$Poof.stop()

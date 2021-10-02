@@ -36,6 +36,7 @@ animations = [ {
 position = Vector2( 16, 16 )
 frames = SubResource( 6 )
 animation = "idle"
+frame = 3
 playing = true
 script = ExtResource( 2 )
 

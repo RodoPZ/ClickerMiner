@@ -10,7 +10,13 @@ signal focus(value)
 func _ready():
 	$Score.text = str(Data.player["Player"]["score"])
 func _process(_delta):
-	$Score.text = str(Data.player["Player"]["score"])
+	if Data.player["Player"]["score"] < 999999:
+		$Score.text = str(Data.player["Player"]["score"])
+	else:
+		$Score.text = str(round_to_dec(Data.player["Player"]["score"]/1000000,3)) + " M"
+	
+func round_to_dec(num, digit):
+	return floor(num * pow(10.0, digit)) / pow(10.0, digit)
 
 func _physics_process(_delta):
 	menus()
@@ -20,25 +26,25 @@ func menus():
 		on_buildings = true
 		get_node("Menu_buildings").set_position(Vector2(0,0))
 		focused("buildings")
-		#$SoundMenu.play()
+		$SoundMenu2.play()
 			
 	elif on_buildings and (Input.is_action_just_pressed("ui_close_buildings_right") or Input.is_action_just_pressed("ui_B")):
 		on_buildings = false
 		get_node("Menu_buildings").set_position(Vector2(112,0))
 		focused("None")
-		#$SoundMenu.play()
+		$SoundMenu2.play()
 			
 	elif on_buildings == false and Input.is_action_just_pressed("ui_open_upgrades_up"):
 		on_upgrades = true
 		get_node("Menu_upgrades").set_position(Vector2(0,48))
 		focused("upgrades")
-		#$SoundMenu.play()
+		$SoundMenu.play()
 			
 	elif on_upgrades and (Input.is_action_just_pressed("ui_close_upgrades_down") or Input.is_action_just_pressed("ui_B")):
 		on_upgrades = false
 		get_node("Menu_upgrades").set_position(Vector2(0,128))
 		focused("None")
-		#$SoundMenu.play()
+		$SoundMenu.play()
 
 
 
@@ -47,7 +53,6 @@ func _on_Menu_buildings_unidades(value):
 		var Buddy = preload("res://Scenes/Unidades/Buddy.tscn").instance()
 		var Jackhammer = preload("res://Scenes/Unidades/Jackhammer.tscn").instance()
 		var Fabrica = preload("res://Scenes/Unidades/Fabrica.tscn").instance()
-		#print(space,can_upgrade)
 		
 		if value == "Buddy" and space[0]<=9 and Data.player["Player"]["score"] >= Data.unidades[value]["precio"]:
 			spawn_building(value,Buddy,0,2)
@@ -75,7 +80,6 @@ func _on_Menu_buildings_unidades(value):
 			can_upgrade[1] = false
 
 func _on_Menu_upgrades_unidades(value):
-	#print(can_upgrade)
 	if on_upgrades:
 		if value == "Strength" and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
 			player_upgrades(value,"mpc",5)
@@ -92,7 +96,6 @@ func _on_Menu_upgrades_unidades(value):
 		elif value == "Oil" and can_upgrade[2] and Data.player["Player"]["score"] >= Data.upgrades[value]["precio"]:
 			building_upgrades(value,"Fabrica",6)
 		else:
-			print(2)
 			$SoundCant.play()
 
 
@@ -112,8 +115,7 @@ func building_upgrades(value,building,aumento_precio):
 		#
 		Data.unidades[building]["mps"] = ceil(Data.unidades[building]["mps"]*Data.upgrades[value]["efecto"])
 		Data.upgrades[value]["precio"] = Data.upgrades[value]["precio"]*aumento_precio
-		#print(Data.unidades[building]["mps"])
-		#
+		$SoundSpawn.play()
 		on_upgrades = false
 		get_node("Menu_upgrades").set_position(Vector2(0,128))
 		focused("None")
@@ -121,10 +123,9 @@ func building_upgrades(value,building,aumento_precio):
 
 func player_upgrades(value,afected,aumento_precio):
 	Data.player["Player"]["score"] -= Data.upgrades[value]["precio"]
-	#
 	Data.player["Player"][afected] = ceil(Data.player["Player"][afected]*Data.upgrades[value]["efecto"])
 	Data.upgrades[value]["precio"] = Data.upgrades[value]["precio"]*aumento_precio
-	#
+	$SoundSpawn.play()
 	on_upgrades = false
 	get_node("Menu_upgrades").set_position(Vector2(0,128))
 	focused("None")
