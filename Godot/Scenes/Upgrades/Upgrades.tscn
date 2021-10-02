@@ -26,51 +26,51 @@ region = Rect2( 96, 256, 32, 32 )
 size = 8
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=5]
 size = 4
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=6]
 size = 4
 font_data = ExtResource( 4 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 288, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 288, 32, 32 )
+region = Rect2( 32, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 256, 32, 32 )
+region = Rect2( 128, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 288, 32, 32 )
+region = Rect2( 64, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 192, 256, 32, 32 )
+region = Rect2( 160, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 288, 32, 32 )
+region = Rect2( 96, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 224, 256, 32, 32 )
+region = Rect2( 192, 256, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 544, 4, 100 )
+region = Rect2( 128, 288, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 224, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 544, 4, 100 )
+
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
 region = Rect2( 156, 544, 4, 100 )
 
@@ -117,7 +117,7 @@ __meta__ = {
 margin_top = 13.0
 margin_right = 133.0
 margin_bottom = 17.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
 text = "Get more points per mine!"
 autowrap = true
@@ -129,7 +129,7 @@ __meta__ = {
 margin_top = 21.0
 margin_right = 140.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "sad"
 autowrap = true
@@ -142,8 +142,8 @@ __meta__ = {
 margin_left = 32.0
 margin_right = 64.0
 margin_bottom = 72.0
-texture_normal = SubResource( 5 )
-texture_focused = SubResource( 6 )
+texture_normal = SubResource( 7 )
+texture_focused = SubResource( 8 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Gems"]
 visible = false
@@ -163,7 +163,7 @@ __meta__ = {
 margin_top = 13.0
 margin_right = 145.0
 margin_bottom = 24.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
 text = "Bonus after breaking rock!"
 autowrap = true
@@ -175,7 +175,7 @@ __meta__ = {
 margin_top = 21.0
 margin_right = 140.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "sad"
 autowrap = true
@@ -188,8 +188,8 @@ __meta__ = {
 margin_left = 64.0
 margin_right = 96.0
 margin_bottom = 72.0
-texture_normal = SubResource( 7 )
-texture_focused = SubResource( 8 )
+texture_normal = SubResource( 9 )
+texture_focused = SubResource( 10 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Soda"]
 visible = false
@@ -209,7 +209,7 @@ __meta__ = {
 margin_top = 13.0
 margin_right = 142.0
 margin_bottom = 17.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
 text = "Invite your buddy a fresh cola!
 
@@ -224,7 +224,7 @@ __meta__ = {
 margin_top = 21.0
 margin_right = 140.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "sad"
 autowrap = true
@@ -237,8 +237,8 @@ __meta__ = {
 margin_left = 96.0
 margin_right = 128.0
 margin_bottom = 72.0
-texture_normal = SubResource( 9 )
-texture_focused = SubResource( 10 )
+texture_normal = SubResource( 11 )
+texture_focused = SubResource( 12 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Gears"]
 visible = false
@@ -258,7 +258,7 @@ __meta__ = {
 margin_top = 13.0
 margin_right = 133.0
 margin_bottom = 17.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
 text = "Stronger Jackhammer!
 
@@ -273,7 +273,7 @@ __meta__ = {
 margin_top = 21.0
 margin_right = 140.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "sad"
 autowrap = true
@@ -286,8 +286,8 @@ __meta__ = {
 margin_left = 128.0
 margin_right = 160.0
 margin_bottom = 72.0
-texture_normal = SubResource( 11 )
-texture_focused = SubResource( 12 )
+texture_normal = SubResource( 13 )
+texture_focused = SubResource( 14 )
 
 [node name="Label" type="Label" parent="VBoxContainer/Oil"]
 visible = false
@@ -307,7 +307,7 @@ __meta__ = {
 margin_top = 13.0
 margin_right = 142.0
 margin_bottom = 17.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.878431, 0.972549, 0.815686, 1 )
 text = "Even factories need some love!
 
@@ -322,7 +322,7 @@ __meta__ = {
 margin_top = 21.0
 margin_right = 140.0
 margin_bottom = 35.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.203922, 0.407843, 0.337255, 1 )
 text = "sad"
 autowrap = true
@@ -332,12 +332,12 @@ __meta__ = {
 }
 
 [node name="Sprite2" type="Sprite" parent="."]
-texture = SubResource( 13 )
+texture = SubResource( 15 )
 centered = false
 
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( 156, 0 )
-texture = SubResource( 14 )
+texture = SubResource( 16 )
 centered = false
 
 [node name="SoundMenu2" type="AudioStreamPlayer" parent="."]

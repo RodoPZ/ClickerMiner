@@ -12,17 +12,17 @@ var player = {
 
 var unidades = {
 	"Buddy": {
-		"precio": 10,
+		"precio": 10, #10
 		"mps": 1
 	},
 	
 	"Jackhammer": {
-		"precio": 2000,
+		"precio": 2000, #2000
 		"mps": 10
 	},
 	
 	"Fabrica": {
-		"precio": 1000000,
+		"precio": 1000000, #1000000
 		"mps": 100
 	}
 }
@@ -43,12 +43,12 @@ var upgrades = {
 	},
 	
 	"Gears": {
-		"precio": 1,
+		"precio": 100,
 		"efecto": 2,
 	},
 	
 	"Oil": {
-		"precio": 1,
+		"precio": 1000,
 		"efecto": 2.5,
 	}	
 }
