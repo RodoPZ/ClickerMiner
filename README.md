@@ -7,8 +7,9 @@ This is a clicker **prototype** made with GB aesthetics for the GBJAM9, it is in
 **We will not develop this game further**, but we will be fixing bugs and stuff, balancing the game, maybe adding some necessary features, etc. Feel free to fork and make changes, create issues and discussions, make your own pull request to improve the game, etc.
 
 You can play a working version of the game on:
-https://tonyram9906.itch.io/clicker-miner
-https://croobat.newgrounds.com/
+
+[itch.io](https://tonyram9906.itch.io/clicker-miner)
+[Newgrounds](https://www.newgrounds.com/portal/view/816878)
 
 This prototipe was made in the Godot game engine using GDscript.
 
