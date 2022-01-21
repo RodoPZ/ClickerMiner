@@ -1,4 +1,5 @@
 # Clicker Miner
+
 **A GameBoy Clicker nobody asked for :D
 You are a miner, you mine!**
 
@@ -21,6 +22,8 @@ Thank you!
 Just import source/Project.godot into the Godot engine.
 
 ## Controls
+![Controls](https://raw.githubusercontent.com/RodoPZ/ClickerMiner/main/docs/WPE26z.gif?token=GHSAT0AAAAAABQUJOOFDYQNID4J2XMCBXNSYPTOEZQ)
+
 Alternate A and S to mine.
 Arrows to move in menus (A to select, S to cancel).
 
