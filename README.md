@@ -8,7 +8,7 @@ This is a clicker **prototype** made with GB aesthetics for the GBJAM9, it is in
 
 You can play a working version of the game on:
 
-[itch.io](https://tonyram9906.itch.io/clicker-miner)
+[Itch.io](https://tonyram9906.itch.io/clicker-miner)
 
 [Newgrounds](https://www.newgrounds.com/portal/view/816878)
 
