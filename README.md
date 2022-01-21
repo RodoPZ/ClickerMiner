@@ -12,7 +12,7 @@ https://croobat.newgrounds.com/
 
 This prototipe was made in the Godot game engine using GDscript.
 
-### Installation
+## Installation
 Just import source/Project.godot into the Godot engine.
 
 ## Controls
