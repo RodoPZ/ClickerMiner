@@ -27,8 +27,6 @@ Arrows to move in menus (A to select, S to cancel).
 ## Color palette applied
 https://lospec.com/palette-list/nintendo-gameboy-bgb
 
-
-
 ## License 
 
 MIT
